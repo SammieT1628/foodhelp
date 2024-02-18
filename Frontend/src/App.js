@@ -1,10 +1,8 @@
 import { Routes, Route } from "react-router-dom"
-import Home from "./Home"
-import About from "./About"
+import Home from "./MainArea/Home"
 import React, { useState, useEffect } from "react";
-import Contact from './Contact'
-import Navbar from "./NavBar"
-import "./App.css";
+import Navbar from "./Navbar/NavBar"
+import Sidebar from "./Sidebar/Sidebar";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -18,11 +16,12 @@ function App() {
   return (
     <div>
       <Navbar />
+      <Sidebar />
+      <div>
       <Routes>
         <Route path="/" element={ <Home/> } />
-        <Route path="about" element={ <About/> } />
-        <Route path="contact" element={ <Contact/> } />
       </Routes>
+      </div>
     </div>
   )
 }
