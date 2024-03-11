@@ -1,25 +1,19 @@
 import { Routes, Route } from "react-router-dom"
-import Home from "./MainArea/Home"
-import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar/NavBar"
-import Sidebar from "./Sidebar/Sidebar";
+import Home from "./Components/MainArea/Home"
+import Navbar from "./Components/Navbar/NavBar"
+import Sidebar from "./Components/Sidebar/Sidebar";
+import Profile from "./Components/Sidebar/Profile";
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:8000/message")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  }, []);
 
   return (
-    <div  className='flex flex-wrap'>
+    <div  className='flex flex-wrap bg-dark-blue text-white'>
       <Navbar />
       <Sidebar />
       <div>
       <Routes>
         <Route path="/" element={ <Home/> } />
+        <Route path="profile" element= { <Profile />} />
       </Routes>
       </div>
     </div>
