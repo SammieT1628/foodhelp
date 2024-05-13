@@ -9,7 +9,6 @@ class Sidebar extends Component {
           <h1><Link to="/profile">Profile</Link></h1>
           <h1>Recipes Saved</h1>
           <h1>Account Settings</h1>
-
         </div>
     )
   }
