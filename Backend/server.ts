@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require('cors');
-require('dotenv').config()
+require('./src/env').config()
+require('./db');
 const port = process.env.PORT || 4000
 const mongodbURL = process.env.DB_CONN_STRING
 
@@ -22,4 +23,4 @@ app.get('/message', (req: any, res: any) => {
 
 app.listen(port, () => {
     console.log(`Server is running on port 8000.`);
-  });
+  }); 

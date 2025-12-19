@@ -4,18 +4,19 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "start": "nodemon server.js",
-      "dev": "nodemon server.js",
-      "build": "tsc server.ts"
+        "start": "nodemon server.js",
+        "dev": "nodemon server.js",
+        "build": "tsc server.ts"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "cors": "^2.8.5",
-      "express": "^4.18.2"
+        "cors": "^2.8.5",
+        "express": "^4.18.2"
     },
     "devDependencies": {
-      "nodemon": "^3.0.3"
+        "@types/node": "^25.0.3",
+        "nodemon": "^3.0.3"
     }
-  }
+}
