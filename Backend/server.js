@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
+var db_1 = require("./db");
 var cors = require('cors');
 require('dotenv').config();
-var db_1 = require("./db");
 var port = process.env.PORT || 4000;
 var app = express();
 (0, db_1.default)();
