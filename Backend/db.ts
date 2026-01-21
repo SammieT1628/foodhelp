@@ -1,13 +1,20 @@
-const mongoose = require('mongoose')
-const MONGO_URI = 'mongodb://localhost:27017/';
 
-mongoose.connnect(MONGO_URI , {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-    .then(()=> {
-        console.log('Connected to MongoDB')
-    })
-    .catch((error: any) => {
-        console.error('Error connecting to MongoDB:', error);
-    });
+ var MONGO_URI = process.env.DB_CONN_STRING;
+import mongoose from 'mongoose';
+
+const connectDB = async () => {
+  try {
+    const mongoURI = 'mongodb://localhost:27017/' 
+    if (!mongoURI) {
+        MONGO_URI = 'mongodb://localhost:27017/'
+    }
+
+    await mongoose.connect(mongoURI);
+
+    console.log('MongoDB connected successfully');
+  } catch (err) {
+    console.error('MongoDB connection error:', err);
+  }
+};
+
+export default connectDB;
