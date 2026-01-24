@@ -6,12 +6,13 @@ const ingredients = new Schema({
     notes: {type: String},
 })
 
-const instructions = new Schema({
-    step: {type: String, required: true}
+const directions = new Schema({
+    step: {type: String, require: true},
+    help: {type: String},
 })
 
 const recipe = new Schema({
     name: { type: String, required: true},
     ingredients: {type: [ingredients], required: true},
-
+    directions: {type: [directions], required: true},
 })
