@@ -1,9 +1,10 @@
 import ListGroup from "../BasicComponents/ListGroup";
+import Recipe from "../BasicComponents/Recipe"
 
 function Home() {
   return (
   <>
-    <h1>Hello World</h1>
+    <Recipe isNew={true} />
   </>
   )
 }
